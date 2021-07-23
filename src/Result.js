@@ -20,7 +20,7 @@ export function Result() {
       <div className="text-controls">
         <div className="button-with-shadow clipboard">
           <button id="copy_button">
-              Copy to clipboard
+            Copy to clipboard
           </button>
           <div className="shadow">
           </div>
