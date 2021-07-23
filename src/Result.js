@@ -11,7 +11,7 @@ export function Result() {
       </div>
       <div className="body">
         <p className="paragraph">
-          ${text}
+          {text}
         </p>
       </div>
       <div className="bg-bottom">
