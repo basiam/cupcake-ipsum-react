@@ -1,0 +1,324 @@
+$footer_height: 150px;
+
+$main_bg_color: #f4f0ee;
+$footer_bg_color: #e8dfd9;
+
+@font-face {
+  font-family: "Museo Sans";
+  src: url(assets/museo_sans_500.otf);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Museo Sans";
+  font-size: 12pt;
+  color: #404040;
+  margin: 0;
+  padding: 0;
+  background: $main_bg_color;
+  width: 100%;
+  text-align: center;
+
+  >.content {
+    min-height: 943px;
+    background: url(assets/main_bg.png) no-repeat;
+    background-position: center 150px;
+    margin: 20px auto 80px auto;
+  }
+
+  &.short {
+    >.content {
+      min-height: 680px;
+      background: url(assets/main_bg_shorter.png) no-repeat;
+      background-position: center 150px;
+      margin: 20px auto;
+    }
+  }
+}
+
+#logo {
+  background: url(assets/logo.png) no-repeat scroll 0% 0%;
+  width: 374px;
+  height: 68px;
+  text-indent: -3333px;
+  border: 0;
+  margin: 50px auto 0 auto;
+}
+
+h2 {
+  background: url(assets/pitch.png) no-repeat scroll 0% 0%;
+  width: 303px;
+  height: 71px;
+  text-indent: -3333px;
+  border: 0;
+  margin: 130px auto 0 auto;
+}
+
+form {
+  text-align: left;
+  width: 300px;
+  margin: 60px auto 20px auto;
+
+}
+
+.button-with-shadow {
+  width: 100%;
+
+  button {
+    text-transform: uppercase;
+    text-indent: -3333px;
+    border: 0;
+    margin: 20px auto 0 auto;
+    display: block;
+    background-position: center 2px !important;
+
+    &:hover,
+    &.hover {
+      cursor: pointer;
+      background-position: center 0px !important;
+    }
+
+    &:active,
+    &.active {
+      background-position: center 4px !important;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .shadow {
+    border: 0;
+    margin: 10px auto 0 auto;
+  }
+}
+
+.button-with-shadow.generate {
+  button {
+    background: url(assets/generate_button.png) no-repeat scroll 0% 0%;
+    width: 165px;
+    height: 45px;
+  }
+
+  .shadow {
+    background: url(assets/generate_button_shadow.png) no-repeat scroll 0% 0%;
+    width: 165px;
+    height: 15px;
+  }
+
+}
+
+.button-with-shadow.clipboard {
+  button {
+    background: url(assets/clip_button.png) no-repeat scroll 0% 0%;
+    width: 231px;
+    height: 50px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .shadow {
+    background: url(assets/clip_button_shadow.png) no-repeat scroll 0% 0%;
+    width: 229px;
+    height: 21px;
+  }
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  margin: 0;
+
+  span {
+    position: relative;
+    left: 40px;
+    top: -8px;
+    margin: 0;
+  }
+}
+
+input {
+  margin: 9px 10px;
+  width: 20px;
+}
+
+#number_of_paragraphs {
+  text-align: center;
+}
+
+#length_of_paragraph {
+  label {
+    display: inline;
+  }
+}
+
+.content {
+  position: relative;
+  width: 1025px;
+}
+
+
+#cupcake_ipsum {
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 11pt;
+  width: 660px;
+
+  .bg-top {
+    height: 67px;
+    background: url(assets/text_bg_top.png)
+  }
+
+  .body {
+    background: #fff;
+
+    p {
+      top: -40px;
+      position: relative;
+      margin: 0;
+      padding: 10px 20px 0;
+    }
+  }
+
+  .bg-bottom {
+    height: 44px;
+    background: url(assets/text_bg_bottom.png)
+  }
+
+}
+
+.footer {
+  height: $footer_height;
+  background: url(assets/footer_bg.png) $footer_bg_color top left repeat-x;
+
+  .made-by {
+    position: absolute;
+    right: 10px;
+    top: 100px;
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 12px;
+
+    span {
+      font-size: 16px;
+    }
+
+    a {
+      color: #404040;
+      text-decoration: underline;
+    }
+  }
+
+  .content {
+    margin: 10px auto;
+  }
+}
+
+.sweet {
+  position: absolute;
+}
+
+$happy-muffin-top: 10px;
+$happy-muffin-left: 715px;
+
+$light-brown-muffin-top: 175px;
+$light-brown-muffin-left: 40px;
+
+$light-pink-muffin-top: 295px;
+$light-pink-muffin-left: 860px;
+
+$cherry-top: 565px;
+$cherry-left: 615px;
+
+$pink-muffin-top: 640px;
+$pink-muffin-left: 20px;
+$white-muffin-top: -20px;
+$white-muffin-left: 20px;
+
+.happy-muffin {
+  top: $happy-muffin-top;
+  left: $happy-muffin-left;
+}
+
+.sweets {
+  top: $happy-muffin-top + 240px;
+  left: $happy-muffin-left + 20px;
+}
+
+.light-brown-muffin {
+  top: $light-brown-muffin-top;
+  left: $light-brown-muffin-left;
+}
+
+.green-muffin {
+  top: $light-brown-muffin-top + 95px;
+  left: $light-brown-muffin-left + 95px;
+}
+
+.sweet-cherry {
+  top: $light-brown-muffin-top + 235px;
+  left: $light-brown-muffin-left;
+}
+
+.light-pink-muffin {
+  top: $light-pink-muffin-top;
+  left: $light-pink-muffin-left;
+}
+
+.blue-muffin {
+  top: $light-pink-muffin-top + 100px;
+  left: $light-pink-muffin-left - 100px;
+}
+
+.pink-pie {
+  top: $light-pink-muffin-top + 195px;
+  left: $light-pink-muffin-left - 50px;
+}
+
+.cherry {
+  top: $cherry-top;
+  left: $cherry-left;
+}
+
+.pink-muffin {
+  top: $pink-muffin-top;
+  left: $pink-muffin-left;
+}
+
+.raspberry {
+  top: $pink-muffin-top+ 190px;
+  left: $pink-muffin-left;
+}
+
+.white-muffin {
+  top: $white-muffin-top;
+  left: $white-muffin-left;
+}
+
+.donut {
+  top: $white-muffin-top + 20px;
+  left: $white-muffin-left + 130px;
+}
+
+body.short {
+
+  .pink-muffin,
+  .raspberry {
+    display: none;
+  }
+}
+
+.text-controls {
+  position: relative;
+}
