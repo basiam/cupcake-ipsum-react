@@ -1,33 +1,60 @@
 import React from 'react';
+import FormHooks from './FormHooks';
+import options from './constants/options';
+
+const showResult = () => {
+  const first = 1;
+  const last = 2;
+  return first + last;
+};
 
 export function Form() {
+  const { inputs, handleInputChange, handleSubmit } = FormHooks(showResult);
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="number_of_paragraphs">
-        <input id="number_of_paragraphs" name="numberOfParagraphs" type="text" />
-          Paragraphs
+        <input
+          id="number_of_paragraphs"
+          name="numberOfParagraphs"
+          type="text"
+          onChange={handleInputChange}
+          value={inputs.numberOfParagraphs}
+        />
+        Paragraphs
       </label>
       <div id="length_of_paragraph">
-        <label>
-          <input name="lengthOfParagraph" type="radio" value="long" />
-          Long
-        </label>
-        <label>
-          <input name="lengthOfParagraph" type="radio" value="medium" />
-          Medium
-        </label>
-        <label>
-          <input name="lengthOfParagraph" type="radio" value="short" />
-          Short
-        </label>
+        {Object.keys(options).map(option =>
+          <label key={option}>
+            <input
+              name="lengthOfParagraph"
+              type="radio"
+              key={option}
+              value={options[option]}
+              onChange={handleInputChange}
+              checked={inputs.lengthOfParagraph === options[option]}
+            />
+            {option}
+          </label>
+        )}
       </div>
       <label>
-        <input name="startsWithCupcakeIpsum" type="checkbox" />
+        <input
+          name="startsWithCupcakeIpsum"
+          type="checkbox"
+          value={inputs.startsWithCupcakeIpsum}
+          onChange={handleInputChange}
+        />
         Start with<br/>
         <span>&quot;Cupcake ipsum dolor sit amet&quot;</span>
       </label>
       <label>
-        <input name="containsLove" type="checkbox" />
+        <input
+          name="containsLove"
+          type="checkbox"
+          value={inputs.containsLove}
+          onChange={handleInputChange}
+        />
         Give your text some &quot;love&quot;
       </label>
       <div className="button-with-shadow generate">
