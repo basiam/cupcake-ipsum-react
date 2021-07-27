@@ -1,5 +1,9 @@
 import { useState } from 'react';
+import isValidNumberOfParagraphs from './libs/isValidNumberOfParagraphs';
 import options from './constants/options';
+
+const NUMBER_OF_PARAGRAPHS = 5;
+
 
 function FormHooks(callback) {
   const [
@@ -8,7 +12,7 @@ function FormHooks(callback) {
   ] = useState({
     containsLove: false,
     lengthOfParagraph: options.LONG,
-    numberOfParagraphs: 5,
+    numberOfParagraphs: NUMBER_OF_PARAGRAPHS,
     startsWithCupcakeIpsum: false
   });
 
@@ -17,18 +21,28 @@ function FormHooks(callback) {
     if (event) {
       event.preventDefault();
     }
-    callback();
+
+    callback(inputs);
   };
 
   const handleInputChange = event => {
     event.persist();
-    setInputs(oldInputs => ({ ...oldInputs,
-      [event.target.name]: event.target.value }));
+    const { target } = event;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    setInputs(oldInputs => ({ ...oldInputs, [target.name]: value }));
+  };
+
+  const handleTextChange = event => {
+    event.persist();
+    const { target } = event;
+    const value = isValidNumberOfParagraphs(target.value) ? target.value : NUMBER_OF_PARAGRAPHS;
+    setInputs(oldInputs => ({ ...oldInputs, [target.name]: value }));
   };
 
   return {
     handleInputChange,
     handleSubmit,
+    handleTextChange,
     inputs
   };
 }

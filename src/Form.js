@@ -2,14 +2,14 @@ import React from 'react';
 import FormHooks from './FormHooks';
 import options from './constants/options';
 
-const showResult = () => {
-  const first = 1;
-  const last = 2;
-  return first + last;
-};
 
-export function Form() {
-  const { inputs, handleInputChange, handleSubmit } = FormHooks(showResult);
+export function Form({ callback }) {
+  const {
+    inputs,
+    handleInputChange,
+    handleSubmit,
+    handleTextChange
+  } = FormHooks(callback);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -18,7 +18,7 @@ export function Form() {
           id="number_of_paragraphs"
           name="numberOfParagraphs"
           type="text"
-          onChange={handleInputChange}
+          onChange={handleTextChange}
           value={inputs.numberOfParagraphs}
         />
         Paragraphs

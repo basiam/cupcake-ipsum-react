@@ -1,8 +1,14 @@
 import React from 'react';
 
-const text = "dadasdas";
+export function Result({ paragraphs }) {
 
-export function Result() {
+  const handleClick = () => {
+    navigator.clipboard.writeText(paragraphs);
+  };
+
+  if (paragraphs.length < 1) {
+    return null;
+  }
 
   return (
     <div id="cupcake_ipsum">
@@ -10,16 +16,18 @@ export function Result() {
 
       </div>
       <div className="body">
-        <p className="paragraph">
-          {text}
-        </p>
+        {paragraphs.map((paragraph, index) =>
+          <p className="paragraph" key={index}>
+            {paragraph}
+          </p>
+        )}
       </div>
       <div className="bg-bottom">
 
       </div>
       <div className="text-controls">
         <div className="button-with-shadow clipboard">
-          <button id="copy_button">
+          <button id="copy_button" onClick={handleClick}>
             Copy to clipboard
           </button>
           <div className="shadow">
