@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import isValidNumberOfParagraphs from './libs/isValidNumberOfParagraphs';
 import options from './constants/options';
+import * as seedrandom from "seedrandom";
+import { createHash } from 'crypto';
 
 const NUMBER_OF_PARAGRAPHS = 5;
 
+// console.log(location.pathname);
 
 function FormHooks(callback) {
   const [
@@ -18,7 +21,8 @@ function FormHooks(callback) {
 
   const updateLocation = () => {
     const { numberOfParagraphs, lengthOfParagraph, containsLove, startsWithCupcakeIpsum } = inputs;
-    const seed = 10;
+    const seed = createHash('sha256').update(seedrandom()).
+      digest('base64');
     const path = `/paragraphs/${numberOfParagraphs}` +
       `/length/${lengthOfParagraph}/` +
       `with_love/${containsLove}/` +
