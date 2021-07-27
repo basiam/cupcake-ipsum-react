@@ -16,12 +16,22 @@ function FormHooks(callback) {
     startsWithCupcakeIpsum: false
   });
 
+  const updateLocation = () => {
+    const { numberOfParagraphs, lengthOfParagraph, containsLove, startsWithCupcakeIpsum } = inputs;
+    const seed = 10;
+    const path = `/paragraphs/${numberOfParagraphs}` +
+      `/length/${lengthOfParagraph}/` +
+      `with_love/${containsLove}/` +
+      `start_with_cupcake/${startsWithCupcakeIpsum}/` +
+      `seed/${seed}`;
+    history.pushState(null, null, path);
+  };
 
   const handleSubmit = event => {
     if (event) {
       event.preventDefault();
     }
-
+    updateLocation();
     callback(inputs);
   };
 

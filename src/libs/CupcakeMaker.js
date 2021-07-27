@@ -46,7 +46,7 @@ export class CupcakeMaker {
   }
 
   generateSentence() {
-    const numberOfWords = randomIntFromInterval(3, 10);
+    const numberOfWords = randomIntFromInterval(5, 10);
     const words = [];
     for (let i = 0; i < numberOfWords; ++i) {
       words.push(this.generateWord());
