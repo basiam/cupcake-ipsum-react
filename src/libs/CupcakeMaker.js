@@ -1,11 +1,12 @@
 import sweetsProvider from './sweetsProvider';
 
 const CUPCAKE_LOVE = ["amet", "sit", "dolor", "ipsum", "cupcake"];
+import RandomEngine from './RandomEngine';
 
 export class CupcakeMaker {
 
-  constructor(randomEngine) {
-    this.randomEngine = randomEngine;
+  constructor({ seed }) {
+    this.randomEngine = new RandomEngine(seed);
     this.chanceOfLove = 0;
     this.wordBuffer = [];
   }

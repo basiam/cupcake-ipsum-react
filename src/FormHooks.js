@@ -2,16 +2,14 @@ import { useState } from 'react';
 import isValidNumberOfParagraphs, { LIMIT_OF_PARAGRAPHS } from './libs/isValidNumberOfParagraphs';
 import RandomEngine from './libs/RandomEngine';
 
-
 function FormHooks({ callback, initialValues }) {
   const [
     inputs,
     setInputs
   ] = useState(initialValues);
 
-  const updateLocation = () => {
-    const { numberOfParagraphs, lengthOfParagraph, containsLove, startsWithCupcakeIpsum } = inputs;
-    const seed = new RandomEngine().generate();
+  const updateLocation = newInputs => {
+    const { numberOfParagraphs, lengthOfParagraph, containsLove, startsWithCupcakeIpsum, seed } = newInputs;
     const path = `/paragraphs/${numberOfParagraphs}` +
       `/length/${lengthOfParagraph}/` +
       `with_love/${containsLove}/` +
@@ -24,8 +22,9 @@ function FormHooks({ callback, initialValues }) {
     if (event) {
       event.preventDefault();
     }
-    updateLocation();
-    callback(inputs);
+    const seed = new RandomEngine().generate();
+    updateLocation({ ...inputs, seed });
+    callback({ ...inputs, seed });
   };
 
   const handleInputChange = event => {

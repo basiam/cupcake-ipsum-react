@@ -3,16 +3,15 @@ import { Form } from './Form';
 import { Result } from './Result';
 import { CupcakeMaker } from './libs/CupcakeMaker';
 import initialValues from './initialValues';
-import RandomEngine from './libs/RandomEngine';
 
-const engine = new RandomEngine(initialValues.seed);
 
 function App() {
   const [paragraphs, setParagraphs] = useState([]);
 
   const callback = inputs => {
-    const maker = new CupcakeMaker(engine);
+    const maker = new CupcakeMaker(inputs);
     const newParagraphs = maker.run(inputs);
+    document.body.classList.remove('short');
     setParagraphs(newParagraphs);
   };
 
