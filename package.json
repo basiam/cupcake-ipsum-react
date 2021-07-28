@@ -1,6 +1,6 @@
 {
   "name": "cupcake-ipsum-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -41,5 +41,8 @@
   "devDependencies": {
     "eslint": "^7.31.0",
     "eslint-plugin-react": "^7.24.0"
+  },
+  "engines": {
+    "node": "12.18.3"
   }
 }
