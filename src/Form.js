@@ -3,13 +3,13 @@ import FormHooks from './FormHooks';
 import options from './constants/options';
 
 
-export function Form({ callback }) {
+export function Form({ callback, initialValues }) {
   const {
     inputs,
     handleInputChange,
     handleSubmit,
     handleTextChange
-  } = FormHooks(callback);
+  } = FormHooks({ callback, initialValues });
 
   return (
     <form onSubmit={handleSubmit}>

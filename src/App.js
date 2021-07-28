@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from './Form';
 import { Result } from './Result';
 import { CupcakeMaker } from './libs/CupcakeMaker';
+import initialValues from './initialValues';
+import randomEngine from './libs/randomEngine';
+
+const engine = randomEngine();
 
 function App() {
   const [paragraphs, setParagraphs] = useState([]);
 
   const callback = inputs => {
-    const maker = new CupcakeMaker();
+    const maker = new CupcakeMaker(engine);
     const newParagraphs = maker.run(inputs);
     setParagraphs(newParagraphs);
   };
 
+  useEffect(() => {
+    if (initialValues.seed) {
+      engine.seed(initialValues.seed);
+      callback(initialValues);
+    }
+  }, [initialValues.seed]);
+
   return (
     <div className="App">
-      <Form callback={callback}/>
+      <Form callback={callback} initialValues={initialValues} />
       <Result paragraphs={paragraphs} />
     </div>
   );
