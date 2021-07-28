@@ -44,6 +44,7 @@ export function Form({ callback }) {
           type="checkbox"
           value={inputs.startsWithCupcakeIpsum}
           onChange={handleInputChange}
+          checked={inputs.startsWithCupcakeIpsum}
         />
         Start with<br/>
         <span>&quot;Cupcake ipsum dolor sit amet&quot;</span>
@@ -54,6 +55,7 @@ export function Form({ callback }) {
           type="checkbox"
           value={inputs.containsLove}
           onChange={handleInputChange}
+          checked={inputs.containsLove}
         />
         Give your text some &quot;love&quot;
       </label>

@@ -10,14 +10,13 @@ export class CupcakeMaker {
     this.chanceOfLove = 0;
   }
 
-  run({ startsWithCupcake, containsLove, numberOfParagraphs, lengthOfParagraph }) {
-    if (startsWithCupcake) {
-      this.startWithCupcakeIpsum();
+  run({ containsLove, lengthOfParagraph, numberOfParagraphs, startsWithCupcakeIpsum }) {
+    if (startsWithCupcakeIpsum) {
+      this.addCupcakeIpsum();
     }
     if (containsLove) {
       this.setChanceOfLove(10);
     }
-
     const paragraphs = [];
     for (let i = 0; i < numberOfParagraphs; i++) {
       const paragraph = this.paragraphGenerator(lengthOfParagraph);
@@ -26,8 +25,8 @@ export class CupcakeMaker {
     return paragraphs;
   }
 
-  startWithCupcakeIpsum() {
-    this.wordBuffer = CUPCAKE_LOVE;
+  addCupcakeIpsum() {
+    this.wordBuffer = [...CUPCAKE_LOVE];
   }
 
   setChanceOfLove(value) {

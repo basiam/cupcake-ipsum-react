@@ -42,6 +42,7 @@ export default [
   "cheesecake",
   "oat cake",
   "carrot cake",
+  "shortbread",
   "fruitcake",
   "soufflé",
   "tiramisu",
