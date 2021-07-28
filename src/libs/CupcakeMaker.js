@@ -1,7 +1,7 @@
 import sweetsProvider from './sweetsProvider';
+import RandomEngine from './RandomEngine';
 
 const CUPCAKE_LOVE = ["amet", "sit", "dolor", "ipsum", "cupcake"];
-import RandomEngine from './RandomEngine';
 
 export class CupcakeMaker {
 

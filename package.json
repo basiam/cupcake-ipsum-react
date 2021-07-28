@@ -43,6 +43,8 @@
     "eslint-plugin-react": "^7.24.0"
   },
   "engines": {
-    "node": "12.18.3"
+    "node": "12.18.3",
+    "npm": "7.19.1",
+    "yarn": "1.22.10"
   }
 }
