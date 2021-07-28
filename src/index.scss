@@ -168,32 +168,24 @@ input {
 }
 
 
-#cupcake_ipsum {
+#ipsum {
   text-align: left;
   margin: 0 auto;
   padding: 0;
   font-size: 11pt;
   width: 660px;
 
-  .bg-top {
-    height: 67px;
-    background: url(assets/text_bg_top.png)
-  }
 
-  .body {
+  .result-body {
     background: #fff;
+    border-radius: 25px;
+    padding: 20px 0px 20px 0px;
+
 
     p {
-      top: -40px;
-      position: relative;
       margin: 0;
       padding: 10px 20px 0;
     }
-  }
-
-  .bg-bottom {
-    height: 44px;
-    background: url(assets/text_bg_bottom.png)
   }
 
 }

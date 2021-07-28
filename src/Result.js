@@ -11,19 +11,13 @@ export function Result({ paragraphs }) {
   }
 
   return (
-    <div id="cupcake_ipsum">
-      <div className="bg-top">
-
-      </div>
-      <div className="body">
+    <div id="ipsum">
+      <div className="result-body">
         {paragraphs.map((paragraph, index) =>
           <p className="paragraph" key={index}>
             {paragraph}
           </p>
         )}
-      </div>
-      <div className="bg-bottom">
-
       </div>
       <div className="text-controls">
         <div className="button-with-shadow clipboard">
