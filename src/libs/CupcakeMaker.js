@@ -23,8 +23,7 @@ export class CupcakeMaker {
     }
     const paragraphs = [];
     for (let i = 0; i < numberOfParagraphs; i++) {
-      const paragraph = this.paragraphGenerator(lengthOfParagraph);
-      paragraphs.push(paragraph);
+      paragraphs.push(this.generateParagraph(lengthOfParagraph));
     }
     return paragraphs;
   }
@@ -59,7 +58,7 @@ export class CupcakeMaker {
   }
 
 
-  paragraphGenerator(lengthOfParagraph) {
+  generateParagraph(lengthOfParagraph) {
     const allowedSentencesRange = {
       "long": [12, 15],
       "medium": [6, 11],

@@ -1,6 +1,6 @@
 import words from '../constants/words';
 
-const wordProvider = () => ({
+const sweetsProvider = () => ({
   getWord(wordIndex) {
     return words[wordIndex];
   },
@@ -9,4 +9,4 @@ const wordProvider = () => ({
   }
 });
 
-export default wordProvider;
+export default sweetsProvider;

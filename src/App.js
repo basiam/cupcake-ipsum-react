@@ -3,9 +3,9 @@ import { Form } from './Form';
 import { Result } from './Result';
 import { CupcakeMaker } from './libs/CupcakeMaker';
 import initialValues from './initialValues';
-import randomEngine from './libs/randomEngine';
+import RandomEngine from './libs/RandomEngine';
 
-const engine = randomEngine();
+const engine = new RandomEngine(initialValues.seed);
 
 function App() {
   const [paragraphs, setParagraphs] = useState([]);
@@ -18,7 +18,6 @@ function App() {
 
   useEffect(() => {
     if (initialValues.seed) {
-      engine.seed(initialValues.seed);
       callback(initialValues);
     }
   }, [initialValues.seed]);
