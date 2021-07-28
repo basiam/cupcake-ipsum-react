@@ -3,7 +3,8 @@ import React from 'react';
 export function Result({ paragraphs }) {
 
   const handleClick = () => {
-    navigator.clipboard.writeText(paragraphs);
+    const text = paragraphs.join('\n');
+    navigator.clipboard.writeText(text);
   };
 
   if (paragraphs.length < 1) {
