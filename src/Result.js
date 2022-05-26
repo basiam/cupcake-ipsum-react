@@ -46,8 +46,7 @@ export function Result({ paragraphs }) {
           <button id="copy_button" onClick={handleClick}>
             Copy to clipboard
           </button>
-          <div className="shadow">
-          </div>
+          <div className="shadow"></div>
         </div>
       </div>
     </div>

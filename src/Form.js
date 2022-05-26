@@ -1,15 +1,10 @@
-import React from 'react';
-import FormHooks from './FormHooks';
-import options from './constants/options';
-
+import React from "react";
+import FormHooks from "./FormHooks";
+import options from "./constants/options";
 
 export function Form({ callback, initialValues }) {
-  const {
-    inputs,
-    handleInputChange,
-    handleSubmit,
-    handleTextChange
-  } = FormHooks({ callback, initialValues });
+  const { inputs, handleInputChange, handleSubmit, handleTextChange } =
+    FormHooks({ callback, initialValues });
 
   return (
     <form onSubmit={handleSubmit}>
@@ -24,7 +19,7 @@ export function Form({ callback, initialValues }) {
         Paragraphs
       </label>
       <div id="length_of_paragraph">
-        {Object.keys(options).map(option =>
+        {Object.keys(options).map((option) => (
           <label key={option}>
             <input
               name="lengthOfParagraph"
@@ -36,18 +31,19 @@ export function Form({ callback, initialValues }) {
             />
             {option}
           </label>
-        )}
+        ))}
       </div>
       <label>
         <input
-          name="startsWithCupcakeIpsum"
+          name="startsWithForestIpsum"
           type="checkbox"
-          value={inputs.startsWithCupcakeIpsum}
+          value={inputs.startsWithForestIpsum}
           onChange={handleInputChange}
-          checked={inputs.startsWithCupcakeIpsum}
+          checked={inputs.startsWithForestIpsum}
         />
-        Start with<br/>
-        <span>&quot;Cupcake ipsum dolor sit amet&quot;</span>
+        Start with
+        <br />
+        <span>&quot;Forest ipsum dolor sit amet&quot;</span>
       </label>
       <label>
         <input

@@ -24,7 +24,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "arrow-parens": "off",
+      "no-extra-parens": "off",
+      "comma-dangle": "off"
+    }
   },
   "browserslist": {
     "production": [

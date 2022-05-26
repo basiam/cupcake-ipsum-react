@@ -1,7 +1,6 @@
 $footer_height: 150px;
 
-$main_bg_color: #f4f0ee;
-$footer_bg_color: #e8dfd9;
+$main_bg_color: #d4f4e7;
 
 @font-face {
   font-family: "Museo Sans";
@@ -26,7 +25,6 @@ body {
 
   >.content {
     min-height: 943px;
-    background: url(assets/main_bg.png) no-repeat;
     background-position: center 150px;
     margin: 20px auto 80px auto;
   }
@@ -34,7 +32,6 @@ body {
   &.short {
     >.content {
       min-height: 680px;
-      background: url(assets/main_bg_shorter.png) no-repeat;
       background-position: center 150px;
       margin: 20px auto;
     }
@@ -193,7 +190,6 @@ input {
 
 .footer {
   height: $footer_height;
-  background: url(assets/footer_bg.png) $footer_bg_color top left repeat-x;
 
   .made-by {
     position: absolute;
