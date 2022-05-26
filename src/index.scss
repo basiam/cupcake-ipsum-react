@@ -2,11 +2,6 @@ $footer_height: 150px;
 
 $main_bg_color: #d4f4e7;
 
-@font-face {
-  font-family: "Museo Sans";
-  src: url(assets/museo_sans_500.otf);
-  font-display: swap;
-}
 
 html {
   margin: 0;
@@ -14,7 +9,9 @@ html {
 }
 
 body {
-  font-family: "Museo Sans";
+  font-family: 400 14px/20px Roboto,
+    Helvetica Neue,
+    sans-serif;
   font-size: 12pt;
   color: #404040;
   margin: 0;
@@ -39,21 +36,21 @@ body {
 }
 
 #logo {
-  background: url(assets/logo.png) no-repeat scroll 0% 0%;
   width: 374px;
   height: 68px;
-  text-indent: -33333px;
   border: 0;
   margin: 50px auto 0 auto;
+  a {
+      color: #404040;
+      text-decoration: none;
+  }
 }
 
 h2 {
-  background: url(assets/pitch.png) no-repeat scroll 0% 0%;
   width: 303px;
   height: 71px;
-  text-indent: -33333px;
   border: 0;
-  margin: 130px auto 0 auto;
+  margin: 30px auto 0 auto;
 }
 
 form {
@@ -227,7 +224,7 @@ $light-brown-muffin-left: 40px;
 $light-pink-muffin-top: 295px;
 $light-pink-muffin-left: 860px;
 
-$cherry-top: 565px;
+$cherry-top: 465px;
 $cherry-left: 615px;
 
 $pink-muffin-top: 640px;
